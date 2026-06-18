@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://contextful/templates/tasks.schema.json",
+  "title": "Contextful Kanban Tasks",
+  "description": "Schema for runs/{runId}/{module-id}/tasks.json produced by write_tasks.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["moduleId", "runId", "tasks"],
+  "properties": {
+    "moduleId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The module id that produced these tasks, e.g. security-analysis."
+    },
+    "runId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The run id, e.g. 20260615-113900-a1b2."
+    },
+    "tasks": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/task" }
+    }
+  },
+  "definitions": {
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "priority", "effort", "evidence", "rationale", "agentic_spec"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Stable per-module id, e.g. SEC-001."
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Short imperative summary of the task."
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "effort": {
+          "type": "string",
+          "enum": ["S", "M", "L"]
+        },
+        "evidence": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Evidence locations, e.g. repos/web/src/search.ts:42."
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Why this task matters."
+        },
+        "agentic_spec": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Steps an agent could follow to implement/verify the fix."
+        }
+      }
+    }
+  }
+}
