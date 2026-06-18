@@ -2,6 +2,10 @@
 
 Per-module analysis agent. You execute **one** analysis module per invocation, following that module's `SKILL.md` instructions and producing the prescribed outputs for the current run.
 
+> **Exception:** `workspace-index` does not use this agent. It runs a dedicated per-item
+> index agent (see `modules/workspace-index/SKILL.md`). This document applies to all other
+> analysis modules.
+
 ## Role
 
 - Perform a focused analysis pass for a single module (e.g. Security Analysis, Tech Debt Triage).
