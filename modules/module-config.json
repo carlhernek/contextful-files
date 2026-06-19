@@ -1,0 +1,12 @@
+{
+  "$schema": "./module-config.schema.json",
+  "defaults": {
+    "maxTurns": 24
+  },
+  "modules": {
+    "accessibility-pass": { "maxTurns": 32 },
+    "security-analysis": { "maxTurns": 28 },
+    "swot-analysis": { "maxTurns": 16 },
+    "workspace-index": { "maxTurnsPerItem": 8 }
+  }
+}

@@ -18,7 +18,7 @@ The app uses a dedicated **agentic indexer** (not the standard module-agent loop
 
 1. **Scan** — enumerate repos, meta docs, and run artefacts (`SCAN_START` / `SCAN_DONE`).
 2. **Enumerate** — write a skeleton `.workspace-index.json`; cached items skip AI.
-3. **Per item** — up to 6 turns per item with tools: `gather_context`, `read_file`,
+3. **Per item** — up to 8 turns per item with tools: `gather_context`, `read_file`,
    `list_directory`, `grep_repo`. Agents prefer docs/README/specs via `gather_context`
    before reading whole trees.
 4. **Output** — each item gets a one-line `description` and 3–8 `keywords`; activity is

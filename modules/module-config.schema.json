@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contextful.dev/schemas/module-config.json",
+  "title": "Contextful module runtime config",
+  "type": "object",
+  "required": ["defaults"],
+  "properties": {
+    "defaults": {
+      "type": "object",
+      "required": ["maxTurns"],
+      "properties": {
+        "maxTurns": {
+          "type": "integer",
+          "minimum": 4,
+          "maximum": 64,
+          "description": "Default agent turn budget per standard analysis module run."
+        }
+      },
+      "additionalProperties": false
+    },
+    "modules": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "maxTurns": {
+            "type": "integer",
+            "minimum": 4,
+            "maximum": 64,
+            "description": "Agent turn budget for this module (one run)."
+          },
+          "maxTurnsPerItem": {
+            "type": "integer",
+            "minimum": 4,
+            "maximum": 64,
+            "description": "workspace-index only: turn budget per indexed item."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

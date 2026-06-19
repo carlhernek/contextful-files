@@ -15,6 +15,8 @@ agents/                        # generalized agent instruction docs (synced to e
   module-agent.md              # per-module analysis agent behavior
 modules/
   template-version.txt         # semver, bumped on any SKILL.md/template/agent change
+  module-config.json           # per-module runtime limits (maxTurns, etc.)
+  module-config.schema.json    # JSON Schema for module-config.json
   <module-id>/SKILL.md         # one folder per analysis module
 templates/                     # OUTPUT templates the agents fill in
   analysis.md                  # raw analysis document skeleton
@@ -34,8 +36,8 @@ Docs are generalized (not per-project). The sidecar injects workspace-specific f
 
 ## Releasing changes
 
-Bump `modules/template-version.txt` (semver) whenever any `SKILL.md`, output template, or `agents/` doc
-changes, then push to `main`. Users pull the update in-app via "Update modules" — no new
+Bump `modules/template-version.txt` (semver) whenever any `SKILL.md`, output template, `agents/` doc,
+or `module-config.json` changes, then push to `main`. Users pull the update in-app via "Update modules" — no new
 app build required.
 
 ## Modules & packs
