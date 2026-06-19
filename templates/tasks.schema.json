@@ -59,7 +59,7 @@
         "agentic_spec": {
           "type": "string",
           "minLength": 1,
-          "description": "Steps an agent could follow to implement/verify the fix."
+          "description": "Paste-ready prompt for a coding agent: which evidence files to inspect, concrete changes to make, and how to verify. Imperative voice; reference paths from evidence."
         }
       }
     }

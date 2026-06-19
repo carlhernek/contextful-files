@@ -26,6 +26,10 @@ You have: `read_file`, `list_directory`, `write_file`, `append_eventlog`, `write
 2. Call `write_analysis("<module-id>", <markdown>)` — raw analysis for this module and run.
 3. Call `write_tasks("<module-id>", <json string>)` — kanban tasks validating against `templates/tasks.schema.json`.
 
+Each task's `agentic_spec` must read like a **paste-ready coding-agent prompt**: tell the agent
+which evidence files to open, what to change, and how to verify. Use short imperative sections
+(what to inspect → what to do → how to confirm). Do not write vague bullet lists without file paths.
+
 Both paths are under `runs/<runId>/<module-id>/`. The run id is set by the runtime; use the module id you were assigned.
 
 ## Constraints
