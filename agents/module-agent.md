@@ -30,6 +30,9 @@ Each task's `agentic_spec` must read like a **paste-ready coding-agent prompt**:
 which evidence files to open, what to change, and how to verify. Use short imperative sections
 (what to inspect → what to do → how to confirm). Do not write vague bullet lists without file paths.
 
+When a task touches code, include at least one `repos/<name>/…` path in `evidence`, and name the
+target repo in the first sentence of `agentic_spec` (e.g. "In `repos/guest-app/`, …").
+
 Both paths are under `runs/<runId>/<module-id>/`. The run id is set by the runtime; use the module id you were assigned.
 
 ## Constraints
