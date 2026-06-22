@@ -7,6 +7,7 @@
     "accessibility-pass": { "maxTurns": 32 },
     "security-analysis": { "maxTurns": 28 },
     "swot-analysis": { "maxTurns": 16 },
+    "test-coverage": { "maxTurns": 28 },
     "workspace-index": { "maxTurnsPerItem": 8 }
   }
 }
