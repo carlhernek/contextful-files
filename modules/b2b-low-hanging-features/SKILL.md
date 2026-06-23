@@ -18,6 +18,7 @@ the existing codebase.
 4. For each gap, estimate effort (S/M/L) based on how much existing scaffolding can be reused.
 5. Prioritize features with the best value-to-effort ratio.
 6. Write outputs once you have **3–6 grounded opportunities** — do not exhaustively catalog shared UI component libraries.
+7. **Turn budget:** after `gather_context` and a quick inventory pass, stop exploring and call `write_analysis` + `write_tasks`. If the turn budget is running low, finalize with the best evidence gathered so far — partial output beats no output.
 
 ## Standards
 Common B2B SaaS expectations (RBAC, SSO/SAML/OIDC, audit logging, admin/reporting).

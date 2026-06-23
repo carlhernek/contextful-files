@@ -5,6 +5,10 @@
   },
   "modules": {
     "accessibility-pass": { "maxTurns": 32 },
+    "api-surface-analysis": { "maxTurns": 36 },
+    "b2b-low-hanging-features": { "maxTurns": 40 },
+    "dependency-health": { "maxTurns": 32 },
+    "documentation-gap-analysis": { "maxTurns": 32 },
     "security-analysis": { "maxTurns": 28 },
     "swot-analysis": { "maxTurns": 16 },
     "test-coverage": { "maxTurns": 28 },
