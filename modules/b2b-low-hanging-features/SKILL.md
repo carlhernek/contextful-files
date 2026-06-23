@@ -12,7 +12,7 @@ the existing codebase.
 - project_type relevance: b2b (most relevant); for "both", weigh against b2c priorities.
 
 ## Method
-1. Call `gather_context` on **every** cloned repo — include API/backend repos, not only frontends.
+1. Call `gather_context` on **every** cloned repo — include API/backend repos, not only frontends. For large repos use a subpath (e.g. `repos/API/src`) rather than the repo root.
 2. Inventory current account/org/permission models and integration points (`grep_repo` with a source glob like `*.{ts,cs,java,py}`).
 3. Identify B2B gaps (e.g. no org-level roles, no audit trail, no SSO).
 4. For each gap, estimate effort (S/M/L) based on how much existing scaffolding can be reused.
