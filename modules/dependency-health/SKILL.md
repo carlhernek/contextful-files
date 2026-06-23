@@ -13,12 +13,14 @@ of manifests and lockfiles; no package installation or live audit execution.
 - project_type relevance: both.
 
 ## Method
-1. Locate all manifests/lockfiles with `list_directory`/`grep_repo`.
-2. Extract direct dependencies and pinned versions.
-3. Use web_search/web_fetch to check latest stable versions and known CVEs/advisories for the
+1. Call `gather_context` on each relevant repo first.
+2. Locate all manifests/lockfiles with `list_directory`/`grep_repo`.
+3. Extract direct dependencies and pinned versions.
+4. Use web_search/web_fetch to check latest stable versions and known CVEs/advisories for the
    most critical packages; save findings under research/ with provenance headers.
-4. Flag majorly outdated, vulnerable, or unmaintained packages; note version conflicts.
-5. Recommend upgrade paths, noting breaking-change risk (S/M/L effort).
+5. Flag majorly outdated, vulnerable, or unmaintained packages; note version conflicts.
+6. Recommend upgrade paths, noting breaking-change risk (S/M/L effort).
+7. Write outputs once dependency risks are summarized.
 
 ## Standards
 Semantic versioning, public advisory databases (CVE/GHSA), maintenance signals (last release).

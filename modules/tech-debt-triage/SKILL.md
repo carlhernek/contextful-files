@@ -11,9 +11,11 @@ abstractions. Produce a triaged, actionable list rather than an exhaustive lint 
 - project_type relevance: both.
 
 ## Method
-1. Use `grep_repo` for `TODO`, `FIXME`, `HACK`, `XXX`, `@deprecated`, and large commented blocks.
-2. Identify oversized files/functions and obvious duplication patterns.
-3. Assess test coverage qualitatively around high-churn or high-risk modules.
+1. Call `gather_context` on **every** cloned repo first.
+2. Use `grep_repo` for `TODO`, `FIXME`, `HACK`, `XXX`, `@deprecated`, and large commented blocks.
+3. Identify oversized files/functions and obvious duplication patterns.
+4. Assess test coverage qualitatively around high-churn or high-risk modules.
+5. Write outputs once top debt items are triaged — avoid cataloguing every TODO.
 4. Triage: rank by (impact x likelihood) vs effort; group related debt into themes.
 
 ## Standards

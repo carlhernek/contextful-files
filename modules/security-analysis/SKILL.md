@@ -13,14 +13,16 @@ scanning, fuzzing, or live penetration testing — analysis is static, from sour
 - project_type relevance: both (auth and data-handling risks apply to b2c and b2b).
 
 ## Method
-1. Map entry points: HTTP routes, CLI args, message consumers, file uploads.
-2. Trace untrusted input to sinks (DB, shell, filesystem, templating, redirects).
-3. Use `grep_repo` for risky patterns: `eval(`, `exec(`, `child_process`, `os.system`,
+1. Call `gather_context` on **every** cloned repo (include API/backend repos, not only frontends).
+2. Map entry points: HTTP routes, CLI args, message consumers, file uploads.
+3. Trace untrusted input to sinks (DB, shell, filesystem, templating, redirects).
+4. Use `grep_repo` for risky patterns: `eval(`, `exec(`, `child_process`, `os.system`,
    `pickle.loads`, raw SQL string concatenation, `dangerouslySetInnerHTML`, `verify=False`,
    hardcoded tokens/keys, `Access-Control-Allow-Origin: *`.
-4. Review auth: password storage, session/cookie flags, JWT validation, authz checks per route.
-5. Check config and headers (CSP, HSTS, secure cookies) and secret management.
-6. Map each finding to OWASP Top 10 (2021) and assign severity.
+5. Review auth: password storage, session/cookie flags, JWT validation, authz checks per route.
+6. Check config and headers (CSP, HSTS, secure cookies) and secret management.
+7. Map each finding to OWASP Top 10 (2021) and assign severity.
+8. Write outputs once findings are grounded — do not exhaustively read every file.
 
 ## Standards
 OWASP Top 10 (2021), OWASP ASVS where relevant, CWE references for specific weaknesses.

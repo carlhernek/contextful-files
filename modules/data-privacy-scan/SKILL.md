@@ -12,12 +12,13 @@ sharing, and data-subject-rights support (access/deletion). Static, source-based
 - project_type relevance: both.
 
 ## Method
-1. Inventory PII fields in models/schemas (`grep_repo` for email, phone, address, dob, ssn, ip,
-   geolocation, payment data).
-2. Trace PII into logs and analytics — flag PII written to logs or third parties.
-3. Check consent mechanisms (cookies/tracking) and retention/deletion handling.
-4. Assess data-subject-rights support (export, deletion) and lawful-basis hooks.
-5. Map findings to relevant principles (GDPR/CCPA) and assign severity.
+1. Call `gather_context` on each relevant repo first.
+2. Inventory PII fields in models/schemas (`grep_repo` with `glob: "*.{ts,cs,java,py}"` for email, phone, address, dob, ssn, payment data — do not grep lockfiles or whole-repo without a glob).
+3. Trace PII into logs and analytics — flag PII written to logs or third parties.
+4. Check consent mechanisms (cookies/tracking) and retention/deletion handling.
+5. Assess data-subject-rights support (export, deletion) and lawful-basis hooks.
+6. Map findings to relevant principles (GDPR/CCPA) and assign severity.
+7. Write outputs once you have a solid PII inventory and top gaps — avoid re-reading every shared component.
 
 ## Standards
 GDPR principles (data minimization, purpose limitation, storage limitation, DSAR), CCPA/CPRA.

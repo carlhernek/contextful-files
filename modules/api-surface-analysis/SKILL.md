@@ -12,12 +12,14 @@ Identify auth gaps and inconsistent patterns. Static review from route/handler s
 - project_type relevance: both (B2B often needs documented, versioned public APIs).
 
 ## Method
-1. Enumerate endpoints via `grep_repo` (router decorators, route tables, schema files).
-2. For each endpoint, determine: method/path, auth requirement, authz checks, input validation,
+1. Call `gather_context` on **every** cloned repo (include API/backend repos, not only frontends).
+2. Enumerate endpoints via `grep_repo` (router decorators, route tables, schema files).
+3. For each endpoint, determine: method/path, auth requirement, authz checks, input validation,
    and rate limiting.
-3. Flag unauthenticated state-changing endpoints, missing authz, unvalidated input, inconsistent
+4. Flag unauthenticated state-changing endpoints, missing authz, unvalidated input, inconsistent
    error shapes, and undocumented endpoints.
-4. Compare implemented endpoints against any API schema/spec for drift.
+5. Compare implemented endpoints against any API schema/spec for drift.
+6. Write outputs once the API surface is mapped — do not read every handler file.
 
 ## Standards
 REST/GraphQL conventions, OWASP API Security Top 10, OpenAPI as the documentation contract.

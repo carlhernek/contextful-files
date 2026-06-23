@@ -12,9 +12,11 @@ Compare documented behavior against actual code to detect drift.
 - project_type relevance: both.
 
 ## Method
-1. Inventory existing docs with `list_directory`/`grep_repo`.
-2. Assess setup docs by checking referenced scripts/commands actually exist in the repo.
-3. Detect drift: documented endpoints/flags/config vs what the code implements.
+1. Call `gather_context` on each relevant repo first.
+2. Inventory existing docs with `list_directory`/`grep_repo`.
+3. Assess setup docs by checking referenced scripts/commands actually exist in the repo.
+4. Detect drift: documented endpoints/flags/config vs what the code implements.
+5. Write outputs once gaps are identified.
 4. Identify undocumented public APIs, env vars, and configuration.
 5. Prioritize gaps by how much they block contributors or users.
 

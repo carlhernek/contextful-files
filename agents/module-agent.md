@@ -14,9 +14,11 @@ Per-module analysis agent. You execute **one** analysis module per invocation, f
 
 ## Tools
 
-You have: `read_file`, `list_directory`, `write_file`, `append_eventlog`, `write_analysis`, `write_tasks`, `grep_repo`, `run_script`, `web_search`, `web_fetch`.
+You have: `read_file`, `list_directory`, `write_file`, `append_eventlog`, `write_analysis`, `write_tasks`, `grep_repo`, `run_script`, `web_search`, `web_fetch`, `gather_context`.
 
-- Prefer `grep_repo` for code search across large trees; use `read_file` for targeted inspection.
+- Start repo exploration with `gather_context` on each relevant repo — it surfaces README, stack manifests, and docs without walking whole trees.
+- Prefer scoped `grep_repo` (`glob: "*.{ts,tsx,js,cs,java,py,go}"`) over grepping entire repos; lockfiles and font assets are excluded automatically.
+- Use `read_file` with `start_line`/`end_line` for large files instead of loading them whole.
 - `run_script` only runs `.py` helpers from `scripts/`.
 - Log significant steps via `append_eventlog` when useful for operator visibility.
 

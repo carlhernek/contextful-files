@@ -12,9 +12,11 @@ inconsistent entitlement checks, and billing edge cases. Most relevant to B2B.
 - project_type relevance: b2b (primary); for "both", still review consumer plans.
 
 ## Method
-1. Locate where plans/tiers/entitlements are defined and enforced (`grep_repo`).
-2. Check consistency: is every gated feature checked the same way? Any bypasses?
-3. Identify friction: no self-serve upgrade, hardcoded limits, unclear proration/trial logic.
+1. Call `gather_context` on each relevant repo first.
+2. Locate where plans/tiers/entitlements are defined and enforced (`grep_repo` with a source glob).
+3. Check consistency: is every gated feature checked the same way? Any bypasses?
+4. Identify friction: no self-serve upgrade, hardcoded limits, unclear proration/trial logic.
+5. Write outputs once packaging patterns are clear.
 4. Flag commercial risk: entitlement checks that fail open, missing quota enforcement.
 
 ## Standards
