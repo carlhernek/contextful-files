@@ -61,6 +61,7 @@ app build required.
 | 15 | Licensing Compatibility | Compliance & Risk |
 | 16 | Workspace Index | *(infrastructure — opt-in, agentic per-item indexer; not in packs)* |
 | 17 | Test Coverage | Engineering |
+| 18 | Lovable Readiness Audit | Engineering, Compliance & Risk |
 
-Packs: Engineering (1,3,6,7,8,9,17), Sales & Growth (2,4,5,12,13),
-Onboarding & Docs (3,10,11), Compliance & Risk (1,14,15).
+Packs: Engineering (1,3,6,7,8,9,17,18), Sales & Growth (2,4,5,12,13),
+Onboarding & Docs (3,10,11), Compliance & Risk (1,14,15,18).

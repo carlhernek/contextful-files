@@ -9,6 +9,7 @@
     "b2b-low-hanging-features": { "maxTurns": 40 },
     "dependency-health": { "maxTurns": 32 },
     "documentation-gap-analysis": { "maxTurns": 32 },
+    "lovable-readiness": { "maxTurns": 48 },
     "security-analysis": { "maxTurns": 28 },
     "swot-analysis": { "maxTurns": 16 },
     "test-coverage": { "maxTurns": 28 },
