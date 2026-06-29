@@ -12,6 +12,7 @@
     "lovable-readiness": { "maxTurns": 48 },
     "security-analysis": { "maxTurns": 28 },
     "swot-analysis": { "maxTurns": 16 },
+    "suggested-next-steps": { "maxTurns": 48 },
     "test-coverage": { "maxTurns": 28 },
     "workspace-index": { "maxTurnsPerItem": 8 }
   }

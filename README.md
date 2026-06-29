@@ -62,9 +62,10 @@ app build required.
 | 16 | Workspace Index | *(infrastructure — opt-in, agentic per-item indexer; not in packs)* |
 | 17 | Test Coverage | Engineering |
 | 18 | Lovable Readiness Audit | Engineering, Compliance & Risk |
+| 19 | Suggested Next Steps | Core |
 
 Packs: Engineering (1,3,6,7,8,9,17,18), Sales & Growth (2,4,5,12,13),
-Onboarding & Docs (3,10,11), Compliance & Risk (1,14,15,18).
+Onboarding & Docs (3,10,11), Compliance & Risk (1,14,15,18), Core (16,19).
 
 Lovable Readiness Audit (18) also consumes read-only Supabase Management API snapshots
 (`supabase/<name>/*.json` — config + advisor metadata only, no SQL or row data) as primary
